@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedConsult - حجز استشارة طبية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                MedConsult
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="doctors.html">الأطباء</a></li>
+                <li><a href="booking.html" class="active">الحجز</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="testimonials.html">تقييمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="booking.html" class="btn btn-primary">احجز استشارة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- هيرو الحجز -->
+    <section class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(26, 115, 232, 0.2)), url('https://images.unsplash.com/photo-1581595219319-4e8aed111216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+        <div class="hero-content">
+            <h1>حجز استشارة طبية</h1>
+            <p>احجز موعدك مع أفضل الأطباء في بضع خطوات بسيطة</p>
+        </div>
+    </section>
+
+    <!-- خطوات الحجز -->
+    <section class="section booking-page">
+        <div class="booking-steps-indicator">
+            <div class="step-indicator active">
+                <div class="step-number-indicator">1</div>
+                <div class="step-label">اختر الطبيب</div>
+            </div>
+            <div class="step-indicator">
+                <div class="step-number-indicator">2</div>
+                <div class="step-label">حدد الموعد</div>
+            </div>
+            <div class="step-indicator">
+                <div class="step-number-indicator">3</div>
+                <div class="step-label">أكمل الحجز</div>
+            </div>
+        </div>
+
+        <!-- خطوة 1: اختيار الطبيب -->
+        <div class="booking-content active">
+            <div class="section-title">
+                <h2>اختر الطبيب المختص</h2>
+                <p>اختر من قائمة أطبائنا المتخصصين حسب حالتك</p>
+            </div>
+            <div class="doctors-selection">
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور أحمد حسن" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>د. أحمد حسن</h3>
+                        <span class="doctor-specialty">استشاري طب باطني</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(124 تقييم)</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">اختر هذا الطبيب</a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتورة سارة محمد" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>د. سارة محمد</h3>
+                        <span class="doctor-specialty">استشارية طب أطفال</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(98 تقييم)</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">اختر هذا الطبيب</a>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور خالد عبدالله" class="doctor-img">
+                    <div class="doctor-info">
+                        <h3>د. خالد عبدالله</h3>
+                        <span class="doctor-specialty">استشاري طب نفسي</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(87 تقييم)</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">اختر هذا الطبيب</a>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-navigation">
+                <div></div> <!-- فارغ للحفاظ على المساحة -->
+                <a href="#" class="btn btn-primary">التالي</a>
+            </div>
+        </div>
+
+        <!-- خطوة 2: تحديد الموعد (مخفي بشكل افتراضي) -->
+        <div class="booking-content">
+            <div class="section-title">
+                <h2>حدد اليوم والموعد</h2>
+                <p>اختر اليوم والوقت المناسبين لك من جدول الطبيب</p>
+            </div>
+            <div class="booking-form">
+                <h3 style="margin-bottom: 1.5rem;">جدول د. أحمد حسن</h3>
+                <div class="form-group">
+                    <label>اختر اليوم</label>
+                    <select>
+                        <option value="">اختر اليوم</option>
+                        <option value="saturday">السبت 20 مايو</option>
+                        <option value="sunday">الأحد 21 مايو</option>
+                        <option value="monday">الإثنين 22 مايو</option>
+                    </select>
+                </div>
+                <div class="time-slots">
+                    <div class="time-slot">9:00 ص</div>
+                    <div class="time-slot">10:00 ص</div>
+                    <div class="time-slot">11:00 ص</div>
+                    <div class="time-slot">12:00 م</div>
+                    <div class="time-slot">1:00 م</div>
+                    <div class="time-slot">2:00 م</div>
+                    <div class="time-slot">3:00 م</div>
+                    <div class="time-slot">4:00 م</div>
+                </div>
+            </div>
+            <div class="booking-navigation">
+                <a href="#" class="btn btn-outline">السابق</a>
+                <a href="#" class="btn btn-primary">التالي</a>
+            </div>
+        </div>
+
+        <!-- خطوة 3: إكمال الحجز (مخفي بشكل افتراضي) -->
+        <div class="booking-content">
+            <div class="section-title">
+                <h2>أكمل بيانات الحجز</h2>
+                <p>أدخل معلوماتك الشخصية لتأكيد الحجز</p>
+            </div>
+            <div class="confirmation-details">
+                <div class="detail-row">
+                    <div class="detail-label">الطبيب:</div>
+                    <div>د. أحمد حسن - استشاري طب باطني</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">الموعد:</div>
+                    <div>السبت 20 مايو - 10:00 صباحاً</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">نوع الاستشارة:</div>
+                    <div>استشارة فيديو</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">التكلفة:</div>
+                    <div>150 ريال سعودي</div>
+                </div>
+            </div>
+            <form class="booking-form" id="booking-form">
+                <div class="form-group">
+                    <label for="fullname">الاسم الكامل</label>
+                    <input type="text" id="fullname" required placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" required placeholder="أدخل بريدك الإلكتروني">
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" required placeholder="أدخل رقم هاتفك">
+                </div>
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية (اختياري)</label>
+                    <textarea id="notes" rows="3" placeholder="أي ملاحظات تود إضافتها للطبيب"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">أكمل الحجز والدفع</button>
+            </form>
+            <div class="booking-navigation">
+                <a href="#" class="btn btn-outline">السابق</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <!-- نفس الفوتر الموجود في الصفحة الرئيسية -->
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
