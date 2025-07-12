@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedConsult - اتصل بنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                MedConsult
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="doctors.html">الأطباء</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="testimonials.html">تقييمات</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="booking.html" class="btn btn-primary">احجز استشارة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- هيرو الاتصال -->
+    <section class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(26, 115, 232, 0.2)), url('https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+        <div class="hero-content">
+            <h1>تواصل معنا</h1>
+            <p>نحن هنا للإجابة على استفساراتك وتقديم الدعم اللازم</p>
+        </div>
+    </section>
+
+    <!-- معلومات الاتصال والنموذج -->
+    <section class="section contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>معلومات التواصل</h3>
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>الرياض، المملكة العربية السعودية<br>حي السليمانية، شارع الملك فهد</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+966 11 123 4567</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@medconsult.com</p>
+                            <p>support@medconsult.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>ساعات العمل</h4>
+                            <p>الأحد - الخميس: 8 صباحاً - 10 مساءً</p>
+                            <p>الجمعة - السبت: 4 مساءً - 10 مساءً</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h3>أرسل رسالة</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">الاسم الكامل</label>
+                        <input type="text" id="contact-name" required placeholder="أدخل اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">البريد الإلكتروني</label>
+                        <input type="email" id="contact-email" required placeholder="أدخل بريدك الإلكتروني">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone">رقم الهاتف</label>
+                        <input type="tel" id="contact-phone" placeholder="أدخل رقم هاتفك">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">الموضوع</label>
+                        <input type="text" id="contact-subject" required placeholder="موضوع الرسالة">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">الرسالة</label>
+                        <textarea id="contact-message" rows="5" required placeholder="أدخل رسالتك هنا"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- خريطة -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.553924509015!2d46.67246077614304!3d24.81314627795403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3a9ae9a0a1d%3A0x3bb9a3d7697d0e7e!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1684592400000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <!-- نفس الفوتر الموجود في الصفحة الرئيسية -->
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
