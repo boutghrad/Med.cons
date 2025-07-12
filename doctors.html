@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedConsult - فريق الأطباء</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                MedConsult
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="doctors.html" class="active">الأطباء</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="testimonials.html">تقييمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="booking.html" class="btn btn-primary">احجز استشارة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- هيرو الأطباء -->
+    <section class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(26, 115, 232, 0.2)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+        <div class="hero-content">
+            <h1>فريق الأطباء المتخصصين</h1>
+            <p>تعرف على فريقنا الطبي المؤهل من أفضل الأطباء في مختلف التخصصات</p>
+        </div>
+    </section>
+
+    <!-- تصفية الأطباء -->
+    <section class="section" style="background-color: white;">
+        <div class="section-title">
+            <h2>تصفح الأطباء حسب التخصص</h2>
+            <p>اختر التخصص الطبي المطلوب</p>
+        </div>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            <div class="services-grid">
+                <a href="#" class="service-card" style="text-align: center;">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>طب باطني</h3>
+                </a>
+                <a href="#" class="service-card" style="text-align: center;">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>طب أطفال</h3>
+                </a>
+                <a href="#" class="service-card" style="text-align: center;">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>طب نفسي</h3>
+                </a>
+                <a href="#" class="service-card" style="text-align: center;">
+                    <div class="service-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h3>جلدية</h3>
+                </a>
+                <a href="#" class="service-card" style="text-align: center;">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>أسنان</h3>
+                </a>
+                <a href="#" class="service-card" style="text-align: center;">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>عيون</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قائمة الأطباء -->
+    <section class="section doctors">
+        <div class="section-title">
+            <h2>جميع الأطباء</h2>
+            <p>فريقنا الطبي المؤهل من أفضل المتخصصين</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور أحمد حسن" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. أحمد حسن</h3>
+                    <span class="doctor-specialty">استشاري طب باطني</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(124 تقييم)</span>
+                    </div>
+                    <p>خبرة 15 سنة في مجال الطب الباطني والأمراض المزمنة، عضو في الجمعية الطبية السعودية.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتورة سارة محمد" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. سارة محمد</h3>
+                    <span class="doctor-specialty">استشارية طب أطفال</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(98 تقييم)</span>
+                    </div>
+                    <p>أخصائية طب أطفال بتجربة 12 سنة، حاصلة على شهادة البورد العربي في طب الأطفال.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور خالد عبدالله" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. خالد عبدالله</h3>
+                    <span class="doctor-specialty">استشاري طب نفسي</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(87 تقييم)</span>
+                    </div>
+                    <p>استشاري الطب النفسي والعلاج السلوكي المعرفي، حاصل على شهادة البورد الأمريكي في الطب النفسي.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتورة لينا عمر" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. لينا عمر</h3>
+                    <span class="doctor-specialty">استشارية جلدية وتجميل</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(142 تقييم)</span>
+                    </div>
+                    <p>استشارية الأمراض الجلدية والتناسلية والتجميل، حاصلة على شهادة البورد السعودي في الأمراض الجلدية.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1591608971362-f08b2a75731a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور يوسف أحمد" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. يوسف أحمد</h3>
+                    <span class="doctor-specialty">استشاري طب العيون</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(115 تقييم)</span>
+                    </div>
+                    <p>استشاري طب وجراحة العيون، متخصص في جراحات الساد والليزك وتصحيح النظر.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور مازن سليمان" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. مازن سليمان</h3>
+                    <span class="doctor-specialty">استشاري جراحة العظام</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(93 تقييم)</span>
+                    </div>
+                    <p>استشاري جراحة العظام والمفاصل، متخصص في جراحات العمود الفقري وإصابات الملاعب.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <!-- نفس الفوتر الموجود في الصفحة الرئيسية -->
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
