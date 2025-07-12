@@ -5,965 +5,297 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedConsult - الاستشارات الطبية الإلكترونية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* متغيرات الألوان والخطوط */
-        :root {
-            --primary-color: #1a73e8;
-            --secondary-color: #34a853;
-            --accent-color: #fbbc05;
-            --light-color: #f8f9fa;
-            --dark-color: #202124;
-            --text-color: #333;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        /* إعادة الضبط الأساسية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f5f7fa;
-            direction: rtl;
-        }
-
-        /* تصميم شريط التنقل */
-        .navbar {
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .logo i {
-            margin-left: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin: 0 0.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            padding: 0.6rem 1.5rem;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* تصميم الهيرو */
-        .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(26, 115, 232, 0.1)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-            padding: 5rem 1rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-color);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #444;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        /* تصميم الخدمات */
-        .section {
-            padding: 4rem 1rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            border-radius: 2px;
-        }
-
-        .services {
-            background-color: white;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background-color: var(--light-color);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-
-        /* تصميم الأطباء */
-        .doctors {
-            background-color: #f5f7fa;
-        }
-
-        .doctors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .doctor-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .doctor-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .doctor-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .doctor-info {
-            padding: 1.5rem;
-        }
-
-        .doctor-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-        }
-
-        .doctor-specialty {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .doctor-rating {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        /* تصميم الحجز */
-        .booking {
-            background-color: white;
-            padding: 4rem 1rem;
-        }
-
-        .booking-container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 2rem;
-        }
-
-        .booking-steps {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .step {
-            display: flex;
-            margin-bottom: 2rem;
-        }
-
-        .step-number {
-            background-color: var(--primary-color);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            margin-left: 1rem;
-            flex-shrink: 0;
-        }
-
-        .step-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-        }
-
-        .booking-form {
-            flex: 1;
-            min-width: 300px;
-            background-color: var(--light-color);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-        }
-
-        /* تصميم المدونة */
-        .blog {
-            background-color: #f5f7fa;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .blog-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .blog-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-content {
-            padding: 1.5rem;
-        }
-
-        .blog-date {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .blog-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        /* هيدر المدونة */
-        .blog-header {
-            background: linear-gradient(rgba(26, 115, 232, 0.85), rgba(52, 168, 83, 0.8)), 
-                        url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-            padding: 5rem 1rem;
-            text-align: center;
-            color: white;
-            margin-bottom: 3rem;
-        }
-
-        .blog-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .blog-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* شريط جانبي للمدونة */
-        .blog-container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            gap: 2rem;
-        }
-
-        .blog-content-full {
-            flex: 3;
-        }
-
-        .blog-sidebar {
-            flex: 1;
-        }
-        
-        .sidebar-widget {
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .sidebar-widget h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light-color);
-            color: var(--primary-color);
-        }
-
-        .categories-list {
-            list-style: none;
-        }
-
-        .categories-list li {
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .categories-list a {
-            text-decoration: none;
-            color: var(--text-color);
-            display: flex;
-            justify-content: space-between;
-            transition: var(--transition);
-        }
-
-        .categories-list a:hover {
-            color: var(--primary-color);
-            padding-right: 5px;
-        }
-
-        .categories-list span {
-            background-color: rgba(26, 115, 232, 0.1);
-            color: var(--primary-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
-            font-size: 0.8rem;
-        }
-
-        .popular-posts .post {
-            display: flex;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .popular-posts .post-img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-            margin-left: 1rem;
-        }
-
-        .popular-posts .post-content {
-            flex: 1;
-        }
-
-        .popular-posts .post-title {
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-            display: block;
-            text-decoration: none;
-            color: var(--dark-color);
-            transition: var(--transition);
-        }
-
-        .popular-posts .post-title:hover {
-            color: var(--primary-color);
-        }
-
-        .popular-posts .post-date {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background-color: var(--light-color);
-            color: var(--text-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .tag:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .view-all-btn {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        /* نظام التصفح */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin: 3rem 0;
-        }
-
-        .pagination a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            margin: 0 0.3rem;
-            border-radius: 50%;
-            text-decoration: none;
-            color: var(--dark-color);
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .pagination a:hover, .pagination a.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* تصميم التقييمات */
-        .testimonials {
-            background-color: white;
-        }
-
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .testimonial {
-            background-color: var(--light-color);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            box-shadow: var(--box-shadow);
-            position: relative;
-        }
-
-        .testimonial::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            right: 20px;
-            font-size: 5rem;
-            color: rgba(26, 115, 232, 0.1);
-            font-family: Georgia, serif;
-        }
-
-        .testimonial-content {
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-left: 1rem;
-        }
-
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .author-info p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* تصميم الفوتر */
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 4rem 1rem 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary-color);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-right: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* تصميم متجاوب */
-        @media (max-width: 992px) {
-            .blog-container {
-                flex-direction: column;
-            }
-            
-            .blog-sidebar {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-
-            .nav-links {
-                margin: 1rem 0;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .booking-container {
-                flex-direction: column;
-            }
-            
-            .blog-sidebar {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .nav-buttons {
-                flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <i class="fas fa-heartbeat"></i>
                 MedConsult
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#doctors">الأطباء</a></li>
-                <li><a href="#booking">الحجز</a></li>
-                <li><a href="#blog" class="active">المدونة</a></li>
-                <li><a href="#testimonials">تقييمات</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="doctors.html">الأطباء</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="testimonials.html">تقييمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
             </ul>
             <div class="nav-buttons">
                 <a href="#" class="btn btn-outline">تسجيل الدخول</a>
-                <a href="#" class="btn btn-primary">انشاء حساب</a>
+                <a href="booking.html" class="btn btn-primary">احجز استشارة</a>
             </div>
         </div>
     </nav>
 
-    <!-- هيدر المدونة -->
-    <header class="blog-header">
-        <h1>المدونة الطبية</h1>
-        <p>اكتشف أحدث المقالات والنصائح الصحية من فريق أطبائنا المتخصصين</p>
-    </header>
+    <!-- الهيرو -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>استشارات طبية بجودة عالية من منزلك</h1>
+            <p>استشر أفضل الأطباء عبر الإنترنت في أي وقت ومن أي مكان. حافظ على صحتك مع فريق طبي متخصص يقدم رعاية طبية شاملة عبر الإنترنت.</p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="btn btn-primary">احجز استشارة الآن</a>
+                <a href="doctors.html" class="btn btn-outline">اعرف أكثر عن أطبائنا</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- محتوى المدونة -->
-    <div class="blog-container">
-        <div class="blog-content-full">
-            <div class="blog-grid">
-                <!-- المقال 1 -->
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1512675806653-15e7542899e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="ارتفاع ضغط الدم في الصيف" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 15 يوليو 2025</div>
-                        <h3>نصائح للتعامل مع ارتفاع ضغط الدم في الصيف</h3>
-                        <p>كيف تحافظ على ضغط الدم مستقراً في فصل الصيف وتتجنب المضاعفات مع ارتفاع درجات الحرارة وتغير أنماط الحياة اليومية.</p>
-                        <a href="#" class="btn btn-outline">قراءة المزيد</a>
-                    </div>
+    <!-- الخدمات -->
+    <section class="section services">
+        <div class="section-title">
+            <h2>خدماتنا الطبية</h2>
+            <p>نقدم مجموعة واسعة من الخدمات الطبية عبر الإنترنت</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-video"></i>
                 </div>
-                
-                <!-- المقال 2 -->
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="فيتامينات لنمو الأطفال" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 20 يوليو 2025</div>
-                        <h3>الفيتامينات الأساسية لنمو الأطفال</h3>
-                        <p>دليل شامل لأهم الفيتامينات والمعادن الضرورية لنمو الأطفال بشكل صحي، وكيفية الحصول عليها من المصادر الطبيعية.</p>
-                        <a href="#" class="btn btn-outline">قراءة المزيد</a>
-                    </div>
-                </div>
-                
-                <!-- المقال 3 -->
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1511377107391-116a7d0a81f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="الصحة النفسية في رمضان" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 25 مارس 2025</div>
-                        <h3>كيف تحافظ على صحتك النفسية خلال رمضان</h3>
-                        <p>نصائح عملية لتحقيق التوازن النفسي والروحي في شهر الصيام، وتجنب التوتر والقلق خلال هذا الشهر الفضيل.</p>
-                        <a href="#" class="btn btn-outline">قراءة المزيد</a>
-                    </div>
-                </div>
-                
-                <!-- المقال 4 -->
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="التمارين المنزلية" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 10 يونيو 2025</div>
-                        <h3>أفضل التمارين الرياضية التي يمكن ممارستها في المنزل</h3>
-                        <p>دليل شامل لتمارين فعالة لا تحتاج لأجهزة رياضية، يمكنك ممارستها في منزلك للحفاظ على لياقتك وصحتك.</p>
-                        <a href="#" class="btn btn-outline">قراءة المزيد</a>
-                    </div>
-                </div>
-                
-                <!-- المقال 5 -->
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="الغذاء الصحي" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 5 مايو 2025</div>
-                        <h3>نظام غذائي صحي لمرضى السكري</h3>
-                        <p>خطة غذائية متكاملة تساعد على التحكم بمستويات السكر في الدم مع الحفاظ على التغذية المتوازنة.</p>
-                        <a href="#" class="btn btn-outline">قراءة المزيد</a>
-                    </div>
-                </div>
-                
-                <!-- المقال 6 -->
-                <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1581595219317-4e8b9d0d3c7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="العناية بالبشرة" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 18 أبريل 2025</div>
-                        <h3>أهم النصائح للعناية بالبشرة في فصل الصيف</h3>
-                        <p>كيف تحمي بشرتك من أشعة الشمس وتتجنب الجفاف والحروق خلال أشهر الصيف الحارة.</p>
-                        <a href="#" class="btn btn-outline">قراءة المزيد</a>
-                    </div>
-                </div>
+                <h3>استشارات فيديو</h3>
+                <p>استشارات طبية مباشرة عبر الفيديو مع أفضل الأطباء المتخصصين في مختلف المجالات.</p>
+                <a href="services.html" class="btn btn-outline">المزيد</a>
             </div>
-            
-            <!-- نظام التصفح بين الصفحات -->
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#"><i class="fas fa-chevron-left"></i></a>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>استشارات دردشة</h3>
+                <p>تواصل مع الأطباء عبر الدردشة النصية للحصول على استشارات سريعة وإجابات فورية.</p>
+                <a href="services.html" class="btn btn-outline">المزيد</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <h3>السجلات الطبية</h3>
+                <p>احتفظ بسجلاتك الطبية بشكل آمن ومركزي للرجوع إليها في أي وقت ومن أي مكان.</p>
+                <a href="services.html" class="btn btn-outline">المزيد</a>
             </div>
         </div>
-        
-        <!-- الشريط الجانبي -->
-        <div class="blog-sidebar">
-            <!-- تصنيفات -->
-            <div class="sidebar-widget">
-                <h3><i class="fas fa-folder"></i> التصنيفات</h3>
-                <ul class="categories-list">
-                    <li><a href="#">أمراض القلب <span>12</span></a></li>
-                    <li><a href="#">صحة الأطفال <span>8</span></a></li>
-                    <li><a href="#">الصحة النفسية <span>15</span></a></li>
-                    <li><a href="#">التغذية <span>22</span></a></li>
-                    <li><a href="#">اللياقة البدنية <span>9</span></a></li>
-                    <li><a href="#">العناية بالبشرة <span>7</span></a></li>
-                    <li><a href="#">الطب الوقائي <span>18</span></a></li>
-                </ul>
-            </div>
-            
-            <!-- المقالات الشائعة -->
-            <div class="sidebar-widget">
-                <h3><i class="fas fa-fire"></i> المقالات الشائعة</h3>
-                <div class="popular-posts">
-                    <div class="post">
-                        <img src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
-                             alt="فوائد المشي" class="post-img">
-                        <div class="post-content">
-                            <a href="#" class="post-title">فوائد المشي اليومي لصحتك الجسدية والنفسية</a>
-                            <div class="post-date">12 يونيو 2025</div>
-                        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="services.html" class="btn btn-primary">عرض جميع الخدمات</a>
+        </div>
+    </section>
+
+    <!-- الأطباء -->
+    <section class="section doctors">
+        <div class="section-title">
+            <h2>فريق الأطباء لدينا</h2>
+            <p>أطباء متخصصون بخبرات واسعة في مختلف المجالات</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور أحمد حسن" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. أحمد حسن</h3>
+                    <span class="doctor-specialty">استشاري طب باطني</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(124 تقييم)</span>
                     </div>
-                    <div class="post">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
-                             alt="التوتر" class="post-img">
-                        <div class="post-content">
-                            <a href="#" class="post-title">كيف تتخلص من التوتر والقلق في 10 خطوات عملية</a>
-                            <div class="post-date">3 مايو 2025</div>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <img src="https://images.unsplash.com/photo-1543364195-bfe6e4932397?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
-                             alt="المناعة" class="post-img">
-                        <div class="post-content">
-                            <a href="#" class="post-title">أطعمة تعزز جهاز المناعة وتحميك من الأمراض</a>
-                            <div class="post-date">28 أبريل 2025</div>
-                        </div>
-                    </div>
+                    <p>خبرة 15 سنة في مجال الطب الباطني والأمراض المزمنة، عضو في الجمعية الطبية السعودية.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
                 </div>
             </div>
-            
-            <!-- الوسوم -->
-            <div class="sidebar-widget">
-                <h3><i class="fas fa-tags"></i> الوسوم الشائعة</h3>
-                <div class="tags">
-                    <a href="#" class="tag">صحة</a>
-                    <a href="#" class="tag">تغذية</a>
-                    <a href="#" class="tag">رياضة</a>
-                    <a href="#" class="tag">نفسية</a>
-                    <a href="#" class="tag">أطفال</a>
-                    <a href="#" class="tag">وقاية</a>
-                    <a href="#" class="tag">علاج</a>
-                    <a href="#" class="tag">نوم</a>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتورة سارة محمد" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. سارة محمد</h3>
+                    <span class="doctor-specialty">استشارية طب أطفال</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(98 تقييم)</span>
+                    </div>
+                    <p>أخصائية طب أطفال بتجربة 12 سنة، حاصلة على شهادة البورد العربي في طب الأطفال.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="الدكتور خالد عبدالله" class="doctor-img">
+                <div class="doctor-info">
+                    <h3>د. خالد عبدالله</h3>
+                    <span class="doctor-specialty">استشاري طب نفسي</span>
+                    <div class="doctor-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(87 تقييم)</span>
+                    </div>
+                    <p>استشاري الطب النفسي والعلاج السلوكي المعرفي، حاصل على شهادة البورد الأمريكي في الطب النفسي.</p>
+                    <a href="doctor-profile.html" class="btn btn-primary">عرض الملف الشخصي</a>
                 </div>
             </div>
         </div>
-    </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="doctors.html" class="btn btn-primary">عرض جميع الأطباء</a>
+        </div>
+    </section>
+
+    <!-- خطوات الحجز -->
+    <section class="section booking">
+        <div class="section-title">
+            <h2>كيفية حجز استشارة</h2>
+            <p>عملية سهلة ومباشرة في 3 خطوات فقط</p>
+        </div>
+        <div class="booking-container">
+            <div class="booking-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>اختر الطبيب</h3>
+                        <p>تصفح قائمة الأطباء المتخصصين واختر الطبيب المناسب حسب التخصص والخبرة والتقييمات.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>حدد الموعد</h3>
+                        <p>اختر اليوم والوقت المناسبين لك من جدول الطبيب المتاح.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>أكمل الحجز</h3>
+                        <p>أدخل معلوماتك الشخصية وأكمل عملية الدفع لتأكيد حجزك.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-form">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">احجز استشارتك الآن</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" placeholder="أدخل اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" placeholder="أدخل رقم هاتفك">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialty">التخصص المطلوب</label>
+                        <select id="specialty">
+                            <option value="">اختر التخصص</option>
+                            <option value="internal">طب باطني</option>
+                            <option value="pediatrics">طب أطفال</option>
+                            <option value="psychiatry">طب نفسي</option>
+                            <option value="dermatology">جلدية</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">ابدأ عملية الحجز</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- المدونة -->
+    <section class="section blog">
+        <div class="section-title">
+            <h2>أحدث المقالات الطبية</h2>
+            <p>اطلع على آخر المستجدات والنصائح الطبية من أطبائنا</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مقال طبي" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">15 مايو 2023</div>
+                    <h3>نصائح للحفاظ على صحة القلب في الصيف</h3>
+                    <p>مع ارتفاع درجات الحرارة في فصل الصيف، تزداد المخاطر على مرضى القلب. تعرف على أهم النصائح للحفاظ على صحة قلبك خلال فصل الصيف.</p>
+                    <a href="blog-post.html" class="btn btn-outline">قراءة المزيد</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مقال طبي" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">8 مايو 2023</div>
+                    <h3>الوقاية من أمراض الصيف الشائعة للأطفال</h3>
+                    <p>مع بداية فصل الصيف، تظهر العديد من الأمراض الشائعة بين الأطفال. تعرف على كيفية الوقاية منها وعلاجها بشكل صحيح.</p>
+                    <a href="blog-post.html" class="btn btn-outline">قراءة المزيد</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مقال طبي" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">1 مايو 2023</div>
+                    <h3>كيف تحافظ على صحتك النفسية في العمل</h3>
+                    <p>ضغوط العمل قد تؤثر سلباً على صحتك النفسية. اكتشف استراتيجيات بسيطة وفعالة للحفاظ على توازنك النفسي في بيئة العمل.</p>
+                    <a href="blog-post.html" class="btn btn-outline">قراءة المزيد</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="blog.html" class="btn btn-primary">عرض جميع المقالات</a>
+        </div>
+    </section>
+
+    <!-- التقييمات -->
+    <section class="section testimonials">
+        <div class="section-title">
+            <h2>تقييمات عملائنا</h2>
+            <p>ما يقوله مرضانا عن تجربتهم مع منصة MedConsult</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>لقد كانت تجربة رائعة مع الدكتور أحمد حسن، استشارة الفيديو كانت واضحة ومفيدة. وصفة الدواء الإلكترونية سهلت علي كثيراً، ولم أضطر للخروج من المنزل. شكراً لفريق MedConsult على هذه الخدمة المميزة.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="محمد علي" class="author-img">
+                    <div class="author-info">
+                        <h4>محمد علي</h4>
+                        <p>مريض</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>استشارة الدردشة مع الدكتورة سارة كانت سريعة وفعالة. أجابت على جميع استفساراتي بخصوص حالة ابني بطريقة واضحة ومطمئنة. الخدمة ممتازة وسهلة الاستخدام، أنصح بها الجميع.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="نورة عبدالله" class="author-img">
+                    <div class="author-info">
+                        <h4>نورة عبدالله</h4>
+                        <p>أم</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>بعد تجربة عدة منصات للاستشارات الطبية، وجدت في MedConsult الحل الأمثل. الخدمة سريعة، الأطباء متخصصون ومحترفون، والتطبيق سهل الاستخدام. خاصة في فترات الليل عندما يصعب الوصول للطبيب.</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="سالم أحمد" class="author-img">
+                    <div class="author-info">
+                        <h4>سالم أحمد</h4>
+                        <p>موظف</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="testimonials.html" class="btn btn-primary">عرض جميع التقييمات</a>
+        </div>
+    </section>
 
     <!-- الفوتر -->
-    <footer class="footer" id="contact">
+    <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <h3>MedConsult</h3>
-                <p>منصة طبية رائدة تقدم استشارات طبية إلكترونية بجودة عالية مع أفضل الأطباء المتخصصين في مختلف المجالات.</p>
+                <p>نقدم لكم أفضل الخدمات الطبية عن بعد بجودة عالية وأسعار مناسبة، مع فريق طبي متخصص ومؤهل.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -974,21 +306,21 @@
             <div class="footer-col">
                 <h3>روابط سريعة</h3>
                 <ul class="footer-links">
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#doctors">الأطباء</a></li>
-                    <li><a href="#booking">حجز موعد</a></li>
-                    <li><a href="#blog">المدونة</a></li>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="services.html">الخدمات</a></li>
+                    <li><a href="doctors.html">الأطباء</a></li>
+                    <li><a href="booking.html">حجز موعد</a></li>
+                    <li><a href="blog.html">المدونة</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h3>خدماتنا</h3>
                 <ul class="footer-links">
-                    <li><a href="#">استشارات الفيديو</a></li>
-                    <li><a href="#">استشارات الدردشة</a></li>
-                    <li><a href="#">الفحوصات المنزلية</a></li>
-                    <li><a href="#">الوصفات الإلكترونية</a></li>
-                    <li><a href="#">المتابعة الطبية</a></li>
+                    <li><a href="services.html">استشارات فيديو</a></li>
+                    <li><a href="services.html">استشارات دردشة</a></li>
+                    <li><a href="services.html">السجلات الطبية</a></li>
+                    <li><a href="services.html">وصفات طبية إلكترونية</a></li>
+                    <li><a href="services.html">استشارات متخصصة</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -997,63 +329,14 @@
                     <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
                     <li><i class="fas fa-phone"></i> +966 11 123 4567</li>
                     <li><i class="fas fa-envelope"></i> info@medconsult.com</li>
-                    <li><i class="fas fa-clock"></i> الأحد - الخميس: 8 صباحاً - 10 مساءً</li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2025 MedConsult. جميع الحقوق محفوظة.
+            <p>&copy; 2023 MedConsult. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <script>
-        // تنفيذ التنقل السلس
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // إضافة فئة نشطة للرابط الحالي
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // تمكين اختيار التاريخ الحالي وما بعده فقط
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date')?.setAttribute('min', today);
-        
-        // تنشيط رابط المدونة
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            if (link.getAttribute('href') === '#blog') {
-                link.classList.add('active');
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
